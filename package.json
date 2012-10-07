@@ -1,0 +1,22 @@
+{
+  "name": "grejs",
+  "version": "0.0.0",
+  "description": "Custom grep inspired tool to find references inside JavaScript files.",
+  "author": "Thorsten Lorenz <thlorenz@gmx.de> (thlorenz.com)",
+  "main": "grejs.js",
+  "scripts": {
+    "test": "tap test/*.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/thlorenz/grejs.git"
+  },
+  "keywords": [
+    "grep",
+    "javascript",
+    "find",
+    "references",
+    "ack"
+  ],
+  "license": "MIT"
+}
