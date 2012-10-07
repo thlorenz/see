@@ -3,9 +3,7 @@
 Custom grep inspired tool to find references inside JavaScript files.
 
 [grejs](http://www.urbandictionary.com/define.php?term=grejs) are supposed to be extraterrestial intelligent non human
-beings who are captured and held in secret labs deep within Area 51 and perhaps the Cheyenne Mtn base. are supposed to
-be extraterrestial intelligent non human beings who are captured and held in secret labs deep within Area 51 and perhaps
-the Cheyenne Mtn base.
+beings who are captured and held in secret labs deep within Area 51 and perhaps the Cheyenne Mtn base.
 
 ## Current status
 
