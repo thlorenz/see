@@ -1,4 +1,4 @@
-# grejs
+# grejs [![Build Status](https://secure.travis-ci.org/thlorenz/grejs.png)](http://travis-ci.org/thlorenz/grejs)
 
 Custom grep inspired tool to find references inside JavaScript files.
 
