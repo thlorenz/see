@@ -18,5 +18,14 @@
     "references",
     "ack"
   ],
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "tap-stream": "~0.1.0",
+    "tap": "~0.3.1"
+  },
+  "dependencies": {
+    "readdirp": "~0.2.0",
+    "npmlog": "0.0.2",
+    "event-stream": "~3.0.7"
+  }
 }
