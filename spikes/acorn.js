@@ -8,5 +8,6 @@ function inspect (s) {
 }
 
 
-inspect(acorn.parse(js));
+inspect(acorn.parse(js, { linePositions: true } ));
+//inspect(acorn.getLineInfo(js, 18));
 

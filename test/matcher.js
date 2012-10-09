@@ -20,7 +20,7 @@ test('matching foo-function.js for bar', function (t) {
       t.deepEquals(data.matches[1].column, 9, 'column of second match')
 
       t.equals(data.lines.length, 5, 'lines contain all lines in file')
-      t.equals(data.lines[0], 'function foo () {', 'content of first line')
+      t.equals(data.lines[0], 'function foo () {', 'text of first line')
 
       t.end();
     }) 
