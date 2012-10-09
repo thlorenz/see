@@ -10,7 +10,7 @@ function grejs (opts) {
     .on('error', function (err) { log.error('readdirp', err); })
     .on('warn', function (err) { log.warn('readdirp', err); })
     .pipe(findMatchingLines(opts.term))
-    .pipe(es.mapSync(function (info) { return { path: info.file.path, lines: info.lines }; }))
+    .pipe(es.mapSync(function (info) { return { path: info.file.path, matches: info.matches }; }))
     .pipe(tap(2))
     ;
 }
