@@ -13,14 +13,16 @@ var test = require('tap').test
 test('matching foo-function.js for bar', function (t) {
   readContentAndFindMatchingLines('bar') 
     .on('data', function (data) {
-      t.deepEquals(data.lines[0].lineno, 2, 'lineno of first occurrence')
-      t.deepEquals(data.lines[0].column, 6, 'column of first occurrence')
+      t.deepEquals(data.matches[0].lineno, 2, 'lineno of first match')
+      t.deepEquals(data.matches[0].column, 6, 'column of first match')
 
-      t.deepEquals(data.lines[1].lineno, 4, 'lineno of second occurrence')
-      t.deepEquals(data.lines[1].column, 9, 'column of second occurrence')
+      t.deepEquals(data.matches[1].lineno, 4, 'lineno of second match')
+      t.deepEquals(data.matches[1].column, 9, 'column of second match')
+
+      t.equals(data.lines.length, 5, 'lines contain all lines in file')
+      t.equals(data.lines[0], 'function foo () {', 'content of first line')
+
       t.end();
-      
     }) 
-    .write({ fullPath: foofunction });
-
+    .write({ fullPath: foofunction })
 })
