@@ -3,3 +3,4 @@ function foo () {
 
   return bar;
 }
+var z = 'z';
