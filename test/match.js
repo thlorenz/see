@@ -7,7 +7,7 @@ var test = require('tap').test
   , fs = require('fs')
   , path = require('path')
   , match = require('../lib/match')
-  , root = path.join(__dirname, 'fixtures') 
+  , root = path.join(__dirname, 'fixtures', 'matches') 
   , foofunction = path.join(root, 'foo-function.js')
   ;
 
