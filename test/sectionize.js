@@ -187,3 +187,43 @@ test('\ncode (16 lines) with two top level function declarations (3:6), (10:13)'
     }) 
   })
 })
+
+test('\ncode (8 lines) with top level if statement (3:6)', function (t) {
+  var code = [
+ /*01*/   'var foo = 1;'
+ /*02*/ , ''
+ /*03*/ , 'if (foo > 0) {'
+ /*04*/ , '  var bar = 2;'
+ /*05*/ , '  console.log(foo + bar);'
+ /*06*/ , '}'
+ /*07*/ , ''
+ /*08*/ , 'module.exports = add;'
+        ].join('\n')
+
+  t.test('\n# and one matching line (3)', function (t) {
+    var matches = [ { lineno: 3, column: 0, line: code[4] } ];
+    
+    t.assertLineMatches(code, matches, 3, 6).end();
+  })
+
+  t.test('\n# and two matching lines (3, 5)', function (t) {
+    var matches = [ 
+        { lineno: 3, column: 2, line: code[4] } 
+      , { lineno: 5, column: 2, line: code[6] } 
+      ];
+    
+    t.assertLineMatches(code, matches, 3, 6).end();
+  })
+
+  t.test('\n# and one matching line (1)', function (t) {
+    var matches = [ { lineno: 1, column: 0, line: code[0] } ];
+    
+    t.assertLineMatches(code, matches, 1, 2).end();
+  }) 
+
+  t.test('\n# and one matching line (8)', function (t) {
+    var matches = [ { lineno: 8, column: 0, line: code[7] } ];
+    
+    t.assertLineMatches(code, matches, 7, 8).end();
+  })
+})
