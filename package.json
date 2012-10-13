@@ -1,15 +1,15 @@
 {
-  "name": "grejs",
+  "name": "see",
   "version": "0.0.0",
-  "description": "Custom grep inspired tool to find references inside JavaScript files.",
+  "description": "Grep inspired tool to find references inside JavaScript files.",
   "author": "Thorsten Lorenz <thlorenz@gmx.de> (thlorenz.com)",
-  "main": "grejs.js",
+  "main": "see.js",
   "scripts": {
     "test": "tap test/*.js"
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/thlorenz/grejs.git"
+    "url": "git://github.com/thlorenz/see.git"
   },
   "keywords": [
     "grep",
