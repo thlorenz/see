@@ -2,9 +2,17 @@
 
 [Grep](http://en.wikipedia.org/wiki/Grep) inspired tool to find references inside JavaScript files.
 
+## Installation
+
+  npm install -g see
+
+## Usage
+
+  see <search-term>
+
 ## Current status
 
-In development, not functional yet.
+In development, minimal functionality (just prints matching lines so far).
 
 ## Features it will have
 
