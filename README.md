@@ -1,9 +1,6 @@
-# grejs [![Build Status](https://secure.travis-ci.org/thlorenz/grejs.png)](http://travis-ci.org/thlorenz/grejs)
+# see [![Build Status](https://secure.travis-ci.org/thlorenz/see.png)](http://travis-ci.org/thlorenz/see)
 
 [Grep](http://en.wikipedia.org/wiki/Grep) inspired tool to find references inside JavaScript files.
-
-[grejs](http://www.urbandictionary.com/define.php?term=grejs) are supposed to be extraterrestial intelligent non human
-beings who are captured and held in secret labs deep within Area 51 and perhaps the Cheyenne Mtn base.
 
 ## Current status
 
@@ -20,8 +17,8 @@ In development, not functional yet.
 
 - syntax highlight matches
 - interactive mode supplementing cli
-- .grejs per project file for local defaults
-- .grejs per user file for global defaults
+- .see per project file for local defaults
+- .see per user file for global defaults
 
 ## CLI options
 
