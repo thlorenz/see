@@ -4,11 +4,11 @@
 
 ## Installation
 
-  npm install -g see
+    npm install -g see
 
 ## Usage
 
-  see <search-term>
+    see <search-term>
 
 ## Current status
 
