@@ -43,6 +43,7 @@ var code = '' + function outside () {
 // [4] - inside
 // etc...
 
+'use strict';
 var esprima  =  require('esprima');
 var util     =  require('util');
 var ast      =  esprima.parse(code, { loc: true });
@@ -57,6 +58,7 @@ function isObject (obj) {
 }
 
 function flatten(acc, node, type) {
+  // flattens ast breadth first which results in array of matching nodes sorted by location
 
   if (Array.isArray(node)) {
     return node.forEach(function (n) {
@@ -73,21 +75,37 @@ function flatten(acc, node, type) {
       acc.push(child);
     }
   });
+
   Object.keys(node)
     .filter(function (k) { return k !== 'parent'; })
     .forEach(function (k) {
       flatten(acc, node[k], type);
     });
+  return acc;
 }
 
-var acc = [];
-flatten(acc, ast, 'BlockStatement');
-console.log(acc);
+function statementLines (flattenedAst) {
+  var lines = [];
+  // since the flattened ast is breadth first and outer statement to inner, we can first fill
+  // the entire range with the outer block and let inner blocks override where appropriate
+  flattenedAst.forEach(function (statement) {
+    var loc = statement.loc;
+    for (var lineno = loc.start.line; lineno <= loc.end.line; lineno++) {
+      lines[lineno] = statement;
+    }    
+  });
 
+  return lines;
+}
 
+var flattenedAst = flatten([], ast, 'BlockStatement');
 
+var lines = statementLines(flattenedAst);
 
-
+inspect(lines);
+lines.forEach(function (line) {
+  console.log(line.parent.id.name);
+});
 
 
 
