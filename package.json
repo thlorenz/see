@@ -31,6 +31,7 @@
     "readdirp": "~0.2.0",
     "npmlog": "0.0.2",
     "event-stream": "~3.0.7",
-    "acorn": "0.0.1"
+    "acorn": "0.0.1",
+    "cardinal": "~0.2.0"
   }
 }

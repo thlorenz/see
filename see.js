@@ -4,6 +4,7 @@ var readdirp   =  require('readdirp')
   , tap        =  require('tap-stream')
   , log        =  require('npmlog')
   , es         =  require('event-stream')
+  , cardinal    = require('cardinal')
   , match      =  require('./lib/match')
   , sectionize =  require('./lib/sectionize')
   ;
@@ -41,13 +42,34 @@ function simplePrint (info) {
   return '\n===================\n' + info.path + ':\n' + text;
 }
 
+function highlightedPrint (info) {
+  var text = info.sections
+    .map(function (sec) {
+      return sec.lines
+        .map(function (lineinfo) {
+          var hl;
+          try {
+            hl = cardinal.highlight(lineinfo.line);
+          } catch (e) {
+            hl = lineinfo.line;
+          }
+          return lineinfo.lineno + ':' + hl;
+        })
+        .join('\n');
+    })
+    .join('\n');
+
+  return '\n===================\n' + info.path + ':\n' + text;
+}
+
+
 function see (opts) {
   readdirp(opts)
     .on('error', function (err) { log.error('readdirp', err); })
     .on('warn', function (err) { log.warn('readdirp', err); })
     .pipe(match(opts.term))
     .pipe(es.mapSync(sectionizeCode))
-    .pipe(es.mapSync(simplePrint))
+    .pipe(es.mapSync(highlightedPrint))
     .pipe(process.stdout)
     ;
 }
