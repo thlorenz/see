@@ -23,16 +23,13 @@
     "tap-stream": "~0.1.0",
     "tap": "~0.3.1",
     "npmlog": "0.0.2",
-    "acorn": "0.0.1",
-    "readdirp": "~0.2.1",
     "event-stream": "~3.0.7",
-    "cardinal": "~0.2.0"
+    "cardinal": "~0.3.1"
   },
   "dependencies": {
     "readdirp": "~0.2.0",
     "npmlog": "0.0.2",
     "event-stream": "~3.0.7",
-    "cardinal": "~0.2.0",
     "esprima": "~1.0.1"
   }
 }
