@@ -25,7 +25,8 @@
     "npmlog": "0.0.2",
     "acorn": "0.0.1",
     "readdirp": "~0.2.1",
-    "event-stream": "~3.0.7"
+    "event-stream": "~3.0.7",
+    "cardinal": "~0.2.0"
   },
   "dependencies": {
     "readdirp": "~0.2.0",
