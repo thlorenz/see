@@ -7,14 +7,6 @@ var test       =  require('tap').test
   , sectionize =  require('../lib/sectionize')
   , cardinal   =  require('cardinal')
 
-function locate(statement) {
-  return statement && statement.loc ? statement.loc.start.line + ':' + statement.loc.end.line : undefined;
-}
-
-function sectionizeAndLocate(code) {
-  return sectionize(code).map(locate);
-}
-
 /* TODO: decide if we want to handle non braced if/for/while etc., statements and if yes fix these tests
  *
  *test('\nsectionizing if statement without braces', function (t) {
