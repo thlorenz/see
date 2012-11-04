@@ -28,6 +28,27 @@ function outer () {
   t.end()
 })
 
+test('\nfor loop without braces', function (t) {
+  var code = '' +
+function outer () {
+  for (var i = 0; i < 2; i++)
+    console.log(i);
+}
+  , expected = [
+      undefined
+    , '1:4'
+    , '2:3'
+    , '2:3'
+    , '1:4'
+    ]
+
+  t.test(cardinal.highlight(code, { linenos: true }), function (t) {
+    t.deepEquals(tutl.sectionizeAndLocate(code), expected, tutl.linenos(expected))
+    t.end()
+  })
+  t.end()
+})
+
 test('\nfor in loop', function (t) {
   var code = '' +
 function outer () {
@@ -46,6 +67,27 @@ function outer () {
 
   t.test(cardinal.highlight(code, { linenos: true }), function (t) {
     t.deepEquals(tutl.sectionizeAndNameParent(code), expected, tutl.linenos(expected))
+    t.end()
+  })
+  t.end()
+})
+
+test('\nfor in loop without braces', function (t) {
+  var code = '' +
+function outer () {
+  for (var key in process)
+    console.log(key);
+}
+  , expected = [
+      undefined
+    , '1:4'
+    , '2:3'
+    , '2:3'
+    , '1:4'
+    ]
+
+  t.test(cardinal.highlight(code, { linenos: true }), function (t) {
+    t.deepEquals(tutl.sectionizeAndLocate(code), expected, tutl.linenos(expected))
     t.end()
   })
   t.end()
@@ -74,6 +116,27 @@ function outer () {
   t.end()
 })
 
+test('\nwhile loop without braces', function (t) {
+  var code = '' +
+function outer () {
+  while (true)
+    console.log('blocking like Java');
+}
+  , expected = [
+      undefined
+    , '1:4'
+    , '2:3'
+    , '2:3'
+    , '1:4'
+    ]
+
+  t.test(cardinal.highlight(code, { linenos: true }), function (t) {
+    t.deepEquals(tutl.sectionizeAndLocate(code), expected, tutl.linenos(expected))
+    t.end()
+  })
+  t.end()
+})
+
 test('\ndo while loop', function (t) {
   var code = '' +
 function outer () {
@@ -96,4 +159,3 @@ function outer () {
   })
   t.end()
 })
-

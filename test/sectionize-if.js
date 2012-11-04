@@ -55,7 +55,7 @@ function outer () {
   t.end()
 })
 
-test('\nsectionizing if statement without braces', function (t) {
+test('\nif statement without braces', function (t) {
   var code = '' +
 function outer () {
   if (true) 
@@ -76,7 +76,7 @@ function outer () {
   t.end()
 })
 
-test('\nsectionizing if else statement without braces', function (t) {
+test('\nif else statement without braces', function (t) {
   var code = '' +
 function outer () {
   if (true) 
