@@ -48,15 +48,7 @@ var code = '' + function outside () {
   t.end()
 })
 
-
-
-
-
-
-
-
-
-test('\nsectionized nested functions without empty lines', function (t) {
+test('\nsectionized nested functions with empty lines', function (t) {
   var code = '' + 
 function outside () {
   var out;
@@ -94,3 +86,32 @@ function outside () {
   })
   t.end()
 })
+
+/*test('\nsectionized nested functions with if statement', function (t) {
+  var code = '' +
+function outer () {
+  var foo = 'foo';
+  if (true) {
+    console.log('true');
+  } else {
+    return false;
+  }
+}
+  , expected = [
+      undefined
+    , [ 1, 8 ]
+    , [ 2, 2 ]
+    , [ 3, 7 ]
+    , [ 3, 7 ]
+    , [ 3, 7 ]
+    , [ 3, 7 ]
+    , [ 3, 7 ]
+    , [ 1, 8 ]
+    ]
+
+  t.test(cardinal.highlight(code, { linenos: true }), function (t) {
+    t.deepEquals(sectionizeAndRangify(code), expected, tutl.linenos(expected))
+    t.end()
+  })
+  t.end()
+})*/
