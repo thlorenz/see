@@ -7,6 +7,7 @@ var test       =  require('tap').test
 
 test('\nif statement', function (t) {
   var code = '' +
+
 function outer () {
   if (true) {
     console.log('true');
@@ -14,15 +15,15 @@ function outer () {
 }
   , expected = [
       undefined
-    , 'outer'
-    , 'IfStatement'
-    , 'IfStatement'
-    , 'IfStatement'
-    , 'outer'
+    , '1:5'
+    , '2:4'
+    , '2:4'
+    , '2:4'
+    , '1:5'
     ]
 
   t.test(cardinal.highlight(code, { linenos: true }), function (t) {
-    t.deepEquals(tutl.sectionizeAndNameParent(code), expected, tutl.linenos(expected))
+    t.deepEquals(tutl.sectionizeAndLocate(code), expected, tutl.linenos(expected))
     t.end()
   })
   t.end()
@@ -37,19 +38,19 @@ function outer () {
     return false;
   }
 }
-  , expected = [
+, expected = [
       undefined
-    , 'outer'
-    , 'IfStatement'
-    , 'IfStatement'
-    , 'IfStatement'
-    , 'IfStatement'
-    , 'IfStatement'
-    , 'outer'
+    , '1:7'
+    , '2:6'
+    , '2:6'
+    , '2:6'
+    , '2:6'
+    , '2:6'
+    , '1:7'
     ]
 
   t.test(cardinal.highlight(code, { linenos: true }), function (t) {
-    t.deepEquals(tutl.sectionizeAndNameParent(code), expected, tutl.linenos(expected))
+    t.deepEquals(tutl.sectionizeAndLocate(code), expected, tutl.linenos(expected))
     t.end()
   })
   t.end()
