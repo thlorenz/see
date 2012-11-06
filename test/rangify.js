@@ -87,7 +87,7 @@ function outside () {
   t.end()
 })
 
-/*test('\nsectionized nested functions with if statement', function (t) {
+test('\nsectionized nested functions with if statement', function (t) {
   var code = '' +
 function outer () {
   var foo = 'foo';
@@ -114,4 +114,4 @@ function outer () {
     t.end()
   })
   t.end()
-})*/
+})
